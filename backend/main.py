@@ -629,6 +629,20 @@ def startup_event():
 # PUBLIC API ENDPOINTS
 # ==========================================
 
+@app.get("/")
+def root():
+    return {
+        "status": "online",
+        "portal": "MIT Mysore - 3D Printing & Additive Manufacturing Portal API",
+        "department": "Department of Mechanical Engineering",
+        "docs_url": "/docs",
+        "health_check": "/api/health",
+        "materials_api": "/api/materials",
+        "facility_gallery": "/api/gallery",
+        "capstone_projects": "/api/projects"
+    }
+
+
 @app.get("/api/health")
 def health_check():
     return {
