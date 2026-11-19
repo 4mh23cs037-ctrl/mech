@@ -1,7 +1,9 @@
 import { PrintingRequest, Material, ProjectItem, GalleryItem, SystemStats, ContactMessage } from '../types';
 
-const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '') 
-  ? `${(import.meta.env.VITE_API_URL || '').replace(/\/$/, '')}/api` 
+const DEFAULT_PROD_API = 'https://mech-fisd.onrender.com';
+const RAW_API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? DEFAULT_PROD_API : '');
+const API_BASE = RAW_API_URL.replace(/\/$/, '') 
+  ? `${RAW_API_URL.replace(/\/$/, '')}/api` 
   : '/api';
 
 export const api = {
