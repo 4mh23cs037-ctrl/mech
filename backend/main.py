@@ -17,6 +17,7 @@ DB_PATH = os.path.join(BASE_DIR, "mit_3d_printing.db")
 UPLOADS_DIR = os.path.join(BASE_DIR, "uploads")
 MODELS_DIR = os.path.join(UPLOADS_DIR, "models")
 GALLERY_DIR = os.path.join(UPLOADS_DIR, "gallery")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(GALLERY_DIR, exist_ok=True)
@@ -42,6 +43,14 @@ app.add_middleware(
 )
 
 app.mount("/uploads", StaticFiles(directory=UPLOADS_DIR), name="uploads")
+
+if os.path.exists(STATIC_DIR):
+    assets_dir = os.path.join(STATIC_DIR, "assets")
+    if os.path.exists(assets_dir):
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+    images_dir = os.path.join(STATIC_DIR, "images")
+    if os.path.exists(images_dir):
+        app.mount("/images", StaticFiles(directory=images_dir), name="images")
 
 
 def get_db():
@@ -631,6 +640,23 @@ def startup_event():
 
 @app.get("/")
 def root():
+    index_file = os.path.join(STATIC_DIR, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    return {
+        "status": "online",
+        "portal": "MIT Mysore - 3D Printing & Additive Manufacturing Portal API",
+        "department": "Department of Mechanical Engineering",
+        "docs_url": "/docs",
+        "health_check": "/api/health",
+        "materials_api": "/api/materials",
+        "facility_gallery": "/api/gallery",
+        "capstone_projects": "/api/projects"
+    }
+
+
+@app.get("/api")
+def api_meta():
     return {
         "status": "online",
         "portal": "MIT Mysore - 3D Printing & Additive Manufacturing Portal API",
@@ -1194,6 +1220,23 @@ def admin_login(creds: AdminLogin):
         }
     else:
         raise HTTPException(status_code=401, detail="Invalid administrator credentials.")
+
+
+@app.get("/{full_path:path}")
+async def catch_all_spa(full_path: str):
+    # Pass through standard backend API endpoints, docs, and uploads
+    if full_path.startswith("api") or full_path.startswith("docs") or full_path.startswith("openapi.json") or full_path.startswith("uploads"):
+        raise HTTPException(status_code=404, detail="Not Found")
+    
+    file_path = os.path.join(STATIC_DIR, full_path)
+    if os.path.exists(file_path) and os.path.isfile(file_path):
+        return FileResponse(file_path)
+    
+    index_file = os.path.join(STATIC_DIR, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    
+    raise HTTPException(status_code=404, detail="Not Found")
 
 
 if __name__ == "__main__":
