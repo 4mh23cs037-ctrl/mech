@@ -1,0 +1,21 @@
+{
+  "name": "mit-mysore-3d-printing-portal",
+  "version": "1.0.0",
+  "description": "Additive Manufacturing & 3D Printing Portal for MIT Mysore - Dept of Mechanical Engineering",
+  "scripts": {
+    "server": "cd backend && python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "preview": "cd client && npm run preview"
+  },
+  "keywords": [
+    "3d-printing",
+    "additive-manufacturing",
+    "mit-mysore",
+    "mechanical-engineering",
+    "threejs",
+    "stl-viewer"
+  ],
+  "author": "Department of Mechanical Engineering, MIT Mysore",
+  "license": "ISC"
+}

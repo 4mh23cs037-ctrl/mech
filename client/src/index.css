@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Rapid3D Brand Orange & Industrial Gradients */
+.bg-rapid-orange {
+  background-color: #f15a24;
+}
+
+.text-rapid-orange {
+  color: #f15a24;
+}
+
+.border-rapid-orange {
+  border-color: #f15a24;
+}
+
+/* Hero Radial Sunburst Effect (from Rapid3D screenshot) */
+.hero-sunburst {
+  background: radial-gradient(circle at 75% 45%, rgba(254, 215, 170, 0.75) 0%, rgba(255, 237, 213, 0.45) 35%, rgba(255, 255, 255, 0) 70%);
+}
+
+.hero-speedlines {
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Modern Card Styling */
+.rapid-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rapid-card:hover {
+  border-color: #fdba74;
+  box-shadow: 0 12px 30px -10px rgba(241, 90, 36, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+.orange-ribbon {
+  background: linear-gradient(135deg, #f15a24 0%, #ea580c 100%);
+}
