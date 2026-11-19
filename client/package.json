@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "serve -s dist -l $PORT"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -14,7 +15,8 @@
     "three": "^0.165.0",
     "lucide-react": "^0.395.0",
     "framer-motion": "^11.2.10",
-    "canvas-confetti": "^1.9.3"
+    "canvas-confetti": "^1.9.3",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

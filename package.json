@@ -6,7 +6,8 @@
     "server": "cd backend && python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
     "client": "cd client && npm run dev",
     "build": "cd client && npm run build",
-    "preview": "cd client && npm run preview"
+    "preview": "cd client && npm run preview",
+    "start": "cd client && npm run start"
   },
   "keywords": [
     "3d-printing",
