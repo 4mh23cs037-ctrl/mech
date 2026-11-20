@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Printer, MapPin, Phone, Mail, ArrowUp, ShieldCheck } from 'lucide-react';
 
 interface FooterProps {
@@ -50,19 +51,19 @@ export const Footer: React.FC<FooterProps> = ({ onAdminClick, onRequestClick, on
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 2: Navigation Links */}
           <div className="lg:col-span-2 flex flex-col gap-3 font-mono">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">
               SECTIONS
             </h4>
-            <a href="#about" className="hover:text-[#f15a24] transition">About Lab</a>
-            <a href="#technologies" className="hover:text-[#f15a24] transition">Technologies</a>
-            <a href="#industries" className="hover:text-[#f15a24] transition">Industries</a>
-            <a href="#services" className="hover:text-[#f15a24] transition">Services</a>
-            <a href="#materials" className="hover:text-[#f15a24] transition">Materials Matrix</a>
-            <a href="#projects" className="hover:text-[#f15a24] transition">Student Projects</a>
-            <a href="#facility" className="hover:text-[#f15a24] transition">Our Facility</a>
-            <a href="#faculty" className="hover:text-[#f15a24] transition">Faculty Members</a>
+            <Link to="/about" className="hover:text-[#f15a24] transition">About Lab</Link>
+            <Link to="/facility" className="hover:text-[#f15a24] transition">Our Facility</Link>
+            <Link to="/faculty" className="hover:text-[#f15a24] transition">Faculty Members</Link>
+            <Link to="/technologies" className="hover:text-[#f15a24] transition">Technologies</Link>
+            <Link to="/services" className="hover:text-[#f15a24] transition">Services</Link>
+            <Link to="/materials" className="hover:text-[#f15a24] transition">Materials Matrix</Link>
+            <Link to="/projects" className="hover:text-[#f15a24] transition">Student Projects</Link>
+            <Link to="/gallery" className="hover:text-[#f15a24] transition">Gallery</Link>
           </div>
 
           {/* Column 3: Quick Links */}
@@ -70,19 +71,19 @@ export const Footer: React.FC<FooterProps> = ({ onAdminClick, onRequestClick, on
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">
               ACTIONS
             </h4>
-            <button onClick={onRequestClick} className="text-left hover:text-[#f15a24] transition">
+            <Link to="/request" className="text-left hover:text-[#f15a24] transition">
               Build Your Quote
-            </button>
-            <button onClick={onTrackClick} className="text-left hover:text-[#f15a24] transition">
+            </Link>
+            <Link to="/track-status" className="text-left hover:text-[#f15a24] transition">
               Track 3D Print Status
-            </button>
+            </Link>
             <button onClick={onAdminClick} className="text-left hover:text-[#f15a24] transition flex items-center gap-1 text-orange-400">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Faculty Admin</span>
             </button>
-            <a href="#contact" className="hover:text-[#f15a24] transition">
+            <Link to="/contact" className="hover:text-[#f15a24] transition">
               Campus Location
-            </a>
+            </Link>
           </div>
 
           {/* Column 4: Contact */}
