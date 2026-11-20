@@ -64,13 +64,13 @@ if os.path.exists(db_path):
             0
         ),
 
-        # --- 2. 3D Printers (Clearly identified placeholders pending department upload) ---
+        # --- 2. 3D Printers ---
         (
             'mitm-fac-print-01',
             'Industrial Dual-Extrusion FDM 3D Printer Station',
             '3D Printers',
-            '/images/placeholders/placeholder_fdm_printer.svg',
-            '[Pending Department Photo Upload] Dual extrusion high-temperature system supporting PLA, ABS, PETG, TPU, and chopped carbon-fiber filament.',
+            '/images/mit/fdm_3d_printer.jpg',
+            'Dual extrusion high-temperature system supporting PLA, ABS, PETG, TPU, and chopped carbon-fiber filament.',
             '2026-02-18',
             1
         ),
@@ -78,19 +78,19 @@ if os.path.exists(db_path):
             'mitm-fac-print-02',
             'Precision SLA UV Stereolithography 3D Machine',
             '3D Printers',
-            '/images/placeholders/placeholder_sla_printer.svg',
-            '[Pending Department Photo Upload] 405nm optical SLA stereolithography unit for 25-micron fine-tolerance micro features and rapid fluidic prototypes.',
+            '/images/mit/sla_3d_printer.jpg',
+            '405nm optical SLA stereolithography unit for 25-micron fine-tolerance micro features and rapid fluidic prototypes.',
             '2026-02-16',
             1
         ),
 
-        # --- 3. Equipment (Clearly identified placeholders pending department upload) ---
+        # --- 3. Equipment ---
         (
             'mitm-fac-eq-01',
             'Structured Blue Light Optical 3D Scanner & Turntable',
             'Equipment',
-            '/images/placeholders/placeholder_scanner.svg',
-            '[Pending Department Photo Upload] High-precision optical scanner with 0.02mm resolution for reverse engineering and automated CAD variance analysis.',
+            '/images/mit/optical_scanner.jpg',
+            'High-precision optical scanner with 0.02mm resolution for reverse engineering and automated CAD variance analysis.',
             '2026-02-14',
             1
         ),
@@ -98,24 +98,24 @@ if os.path.exists(db_path):
             'mitm-fac-eq-02',
             'Automated Ultrasonic Wash & UV Post-Curing Chamber',
             'Equipment',
-            '/images/placeholders/placeholder_curing.svg',
-            '[Pending Department Photo Upload] Isopropyl wash tank and multi-frequency UV curing station ensuring maximum tensile crosslinking for resin components.',
+            '/images/mit/curing_chamber.jpg',
+            'Isopropyl wash tank and multi-frequency UV curing station ensuring maximum tensile crosslinking for resin components.',
             '2026-02-12',
             0
         ),
 
-        # --- 4. Printed Models (Capstone prototypes & components) ---
+        # --- 4. Printed Models ---
         (
             'mitm-fac-mod-01',
             'Planetary Speed Reducer & Compliant Robotic Gripper',
             'Printed Models',
-            '/images/placeholders/placeholder_printed_model.svg',
-            '[Pending Department Photo Upload] Monolithic print-in-place planetary gearbox with integral compliant bionic finger joints printed without external assembly.',
+            '/images/mit/planetary_prototype.jpg',
+            'Monolithic print-in-place planetary gearbox with integral compliant bionic finger joints printed without external assembly.',
             '2026-02-11',
             1
         ),
 
-        # --- 5. Student Activities (Actual MIT Mysore Mechanical Activities) ---
+        # --- 5. Student Activities ---
         (
             'mitm-fac-act-01',
             'MECHISMOS State-Level Mechanical Project & 3D Prototype Expo',
@@ -147,8 +147,8 @@ if os.path.exists(db_path):
             'mitm-fac-act-04',
             'Student Slicing & Machine Toolpath Practical Session',
             'Student Activities',
-            '/images/placeholders/placeholder_student_slice.svg',
-            '[Pending Department Photo Upload] Hands-on laboratory training instructing mechanical engineering students in Ultimaker Cura and PrusaSlicer optimization.',
+            '/images/mit/cad_lab1.jpg',
+            'Hands-on laboratory training instructing mechanical engineering students in Ultimaker Cura and PrusaSlicer optimization.',
             '2026-01-15',
             0
         )

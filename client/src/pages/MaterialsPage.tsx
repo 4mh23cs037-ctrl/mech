@@ -40,3 +40,4 @@ export const MaterialsPage: React.FC = () => {
     </div>
   );
 };
+

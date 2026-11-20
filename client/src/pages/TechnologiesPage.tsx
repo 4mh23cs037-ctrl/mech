@@ -33,3 +33,4 @@ export const TechnologiesPage: React.FC = () => {
     </div>
   );
 };
+

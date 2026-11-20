@@ -45,3 +45,4 @@ export const TrackStatusPage: React.FC = () => {
     </div>
   );
 };
+

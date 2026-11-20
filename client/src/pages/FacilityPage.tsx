@@ -36,3 +36,4 @@ export const FacilityPage: React.FC = () => {
     </div>
   );
 };
+
