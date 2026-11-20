@@ -73,7 +73,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Main Vertical Sidebar Container */}
       <aside
         className={`fixed top-0 bottom-0 left-0 z-50 bg-[#0c1322] text-gray-200 border-r border-slate-800 flex flex-col justify-between transition-all duration-300 shadow-2xl ${
-          collapsed ? 'w-20' : 'w-64'
+          collapsed ? 'w-20' : 'w-72'
         } ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
@@ -83,10 +83,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <Link 
             to="/" 
             onClick={handleNavClick}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3.5 group"
           >
             {/* Official MIT Mysore Circular Seal */}
-            <div className="w-11 h-11 rounded-full bg-white p-0.5 border-2 border-orange-500 shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-full bg-white p-0.5 border-2 border-orange-500 shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <img 
                 src="/images/mit_logo.png" 
                 alt="MIT Mysore Logo" 
@@ -97,22 +97,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {/* Title / Subtitle (hidden when collapsed on desktop) */}
             <div className={`flex flex-col overflow-hidden transition-all duration-300 ${collapsed ? 'md:hidden' : 'block'}`}>
-              <div className="flex items-center gap-1.5">
-                <span className="text-lg font-black tracking-wider text-white font-['Rajdhani'] uppercase">
+              <div className="flex items-center gap-2">
+                <span className="text-xl sm:text-2xl font-black tracking-wider text-white font-['Rajdhani'] uppercase">
                   RAPID 3D
                 </span>
-                <span className="text-[10px] font-bold text-[#f15a24] uppercase font-mono px-1.5 py-0.2 rounded bg-orange-500/10 border border-orange-500/20">
+                <span className="text-xs font-bold text-[#f15a24] uppercase font-mono px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">
                   MITM
                 </span>
               </div>
-              <span className="text-[10px] text-gray-400 font-medium tracking-wide uppercase truncate">
+              <span className="text-xs text-slate-300 font-medium tracking-wide uppercase truncate">
                 Dept. of Mechanical Engg.
               </span>
             </div>
           </Link>
         </div>
 
-        {/* Navigation Items (Scrollable) */}
+        {/* Navigation Items (Scrollable with Enhanced Font Size) */}
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1.5 custom-scrollbar">
           {navigationItems.map((item) => {
             const Icon = item.icon;
@@ -125,28 +125,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={handleNavClick}
                 title={collapsed ? item.name : undefined}
                 className={({ isActive }) => `
-                  group relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200
+                  group relative flex items-center gap-3.5 px-3.5 py-3 rounded-xl text-sm sm:text-[15px] font-bold transition-all duration-200
                   ${isActive 
-                    ? 'bg-gradient-to-r from-[#f15a24] to-[#ea580c] text-white shadow-lg shadow-orange-500/25 font-bold' 
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/80'}
+                    ? 'bg-gradient-to-r from-[#f15a24] to-[#ea580c] text-white shadow-lg shadow-orange-500/25 font-extrabold' 
+                    : 'text-slate-200 hover:text-white hover:bg-slate-800/90 font-medium'}
                   ${collapsed ? 'md:justify-center md:px-0' : ''}
                 `}
               >
                 {/* Active Indicator Bar on Left */}
                 {isActive && (
-                  <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-white shadow-sm" />
+                  <span className="absolute left-0 top-2 bottom-2 w-1.5 rounded-r bg-white shadow-sm" />
                 )}
 
                 <Icon className={`w-5 h-5 shrink-0 transition-transform group-hover:scale-110 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-orange-400'}`} />
 
                 {/* Label & Badge */}
                 <div className={`flex items-center justify-between flex-1 overflow-hidden ${collapsed ? 'md:hidden' : 'flex'}`}>
-                  <span className="truncate">{item.name}</span>
+                  <span className="truncate tracking-wide">{item.name}</span>
                   {item.badge && (
-                    <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded uppercase font-bold tracking-wider ${
+                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold tracking-wider ${
                       isActive 
                         ? 'bg-white/20 text-white' 
-                        : 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
+                        : 'bg-orange-500/15 text-orange-400 border border-orange-500/30'
                     }`}>
                       {item.badge}
                     </span>
@@ -170,13 +170,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </nav>
 
         {/* Bottom Actions & Controls */}
-        <div className="p-3 border-t border-slate-800/80 bg-[#090e1a]/90 shrink-0 space-y-2">
+        <div className="p-3.5 border-t border-slate-800/80 bg-[#090e1a]/95 shrink-0 space-y-2.5">
           {/* Action Button: Request Quote */}
           <Link
             to="/request"
             onClick={handleNavClick}
             title={collapsed ? "Build Quote / Request 3D Print" : undefined}
-            className={`w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-orange-600 hover:bg-[#f15a24] text-white text-xs font-bold font-mono tracking-wide shadow-md shadow-orange-600/20 transition-all ${
+            className={`w-full flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-orange-600 hover:bg-[#f15a24] text-white text-sm font-bold font-mono tracking-wide shadow-md shadow-orange-600/20 transition-all ${
               collapsed ? 'md:px-0' : ''
             }`}
           >
@@ -191,7 +191,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               if (mobileOpen) onMobileClose();
             }}
             title={collapsed ? "Faculty & Admin Portal" : undefined}
-            className={`w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white text-xs font-medium transition ${
+            className={`w-full flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold transition ${
               collapsed ? 'md:px-0' : ''
             }`}
           >
@@ -200,12 +200,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </button>
 
           {/* Laboratory Status (expanded only) */}
-          <div className={`pt-2 flex items-center justify-between text-[10px] font-mono text-slate-400 ${collapsed ? 'md:hidden' : 'flex'}`}>
-            <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>VTU Center Online</span>
+          <div className={`pt-1.5 flex items-center justify-between text-xs font-mono text-slate-300 ${collapsed ? 'md:hidden' : 'flex'}`}>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="font-semibold">VTU Center Online</span>
             </div>
-            <span className="text-slate-500">v2.4</span>
+            <span className="text-slate-400 font-bold">v2.4</span>
           </div>
 
           {/* Desktop Collapse / Expand Toggle Button */}
@@ -218,7 +218,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {collapsed ? (
                 <ChevronRight className="w-4 h-4" />
               ) : (
-                <div className="flex items-center gap-1 text-[11px] font-mono">
+                <div className="flex items-center gap-1.5 text-xs font-mono font-medium">
                   <ChevronLeft className="w-4 h-4" />
                   <span>Collapse</span>
                 </div>
@@ -230,4 +230,3 @@ export const Sidebar: React.FC<SidebarProps> = ({
     </>
   );
 };
-

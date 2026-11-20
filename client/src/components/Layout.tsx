@@ -63,80 +63,80 @@ export const Layout: React.FC = () => {
       {/* 2. Main Content Wrapper (Offset based on sidebar width) */}
       <div 
         className={`flex-1 flex flex-col transition-all duration-300 min-w-0 ${
-          collapsed ? 'md:pl-20' : 'md:pl-64'
+          collapsed ? 'md:pl-20' : 'md:pl-72'
         }`}
       >
-        {/* Top Navbar / Header Bar */}
+        {/* Top Navbar / Header Bar with Larger Font Sizes */}
         <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
           {/* Top Bar for Desktop */}
-          <div className="hidden md:flex items-center justify-between px-6 py-2.5 bg-gray-50/80 border-b border-gray-100 text-xs text-gray-600">
-            {/* Left: Department Info */}
-            <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center justify-between px-6 sm:px-8 py-3 bg-gray-50/90 border-b border-gray-100 text-sm text-gray-700">
+            {/* Left: Department Contact Info with Enhanced Font */}
+            <div className="flex items-center gap-7">
               <a 
                 href="tel:+919894733117" 
-                className="flex items-center gap-1.5 hover:text-[#f15a24] transition font-medium"
+                className="flex items-center gap-2 hover:text-[#f15a24] transition font-semibold text-gray-800"
               >
-                <div className="w-5 h-5 rounded-full bg-[#f15a24] flex items-center justify-center text-white shrink-0">
-                  <Phone className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-full bg-[#f15a24] flex items-center justify-center text-white shrink-0 shadow-xs">
+                  <Phone className="w-3.5 h-3.5" />
                 </div>
                 <span>+91 98947 33117</span>
               </a>
 
               <a 
                 href="mailto:mechanical@mitmysore.in" 
-                className="flex items-center gap-1.5 hover:text-[#f15a24] transition font-medium"
+                className="flex items-center gap-2 hover:text-[#f15a24] transition font-semibold text-gray-800"
               >
-                <div className="w-5 h-5 rounded-full bg-[#f15a24] flex items-center justify-center text-white shrink-0">
-                  <Mail className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-full bg-[#f15a24] flex items-center justify-center text-white shrink-0 shadow-xs">
+                  <Mail className="w-3.5 h-3.5" />
                 </div>
                 <span>mechanical@mitmysore.in</span>
               </a>
             </div>
 
-            {/* Right: Quick Action Buttons */}
+            {/* Right: Quick Action Buttons with Larger Text */}
             <div className="flex items-center gap-3">
               <Link
                 to="/request"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#f15a24] hover:bg-[#ea580c] text-white font-semibold text-xs shadow-sm transition"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f15a24] hover:bg-[#ea580c] text-white font-bold text-sm tracking-wide shadow-sm hover:shadow-md transition"
               >
-                <Send className="w-3.5 h-3.5" />
+                <Send className="w-4 h-4" />
                 <span>Build Your Quote</span>
               </Link>
 
               <button
                 onClick={() => setAdminOpen(true)}
-                className="p-1.5 rounded-lg bg-white border border-gray-200 hover:border-orange-300 text-gray-600 hover:text-[#f15a24] shadow-xs transition"
+                className="p-2 rounded-xl bg-white border border-gray-200 hover:border-orange-300 text-gray-700 hover:text-[#f15a24] shadow-xs transition"
                 title="Faculty & Admin Dashboard"
               >
-                <ShieldCheck className="w-4 h-4" />
+                <ShieldCheck className="w-5 h-5 text-orange-500" />
               </button>
             </div>
           </div>
 
-          {/* Breadcrumb / Page Title Navigation Bar */}
-          <div className="px-4 sm:px-6 py-3 flex items-center justify-between">
+          {/* Breadcrumb / Page Title Navigation Bar with Increased Font */}
+          <div className="px-4 sm:px-8 py-3.5 flex items-center justify-between">
             {/* Mobile: Hamburger + Brand */}
             <div className="flex items-center gap-3 md:hidden">
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 transition"
+                className="p-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 transition"
                 aria-label="Toggle mobile menu"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
 
-              <Link to="/" className="flex items-center gap-2">
+              <Link to="/" className="flex items-center gap-2.5">
                 <img 
                   src="/images/mit_logo.png" 
                   alt="MIT Mysore Logo" 
-                  className="w-8 h-8 object-contain"
+                  className="w-9 h-9 object-contain"
                   onError={(e) => { e.currentTarget.src = '/mit_logo.png'; }}
                 />
                 <div>
-                  <span className="font-bold text-sm text-gray-900 font-['Rajdhani'] block leading-none uppercase">
+                  <span className="font-extrabold text-base text-gray-900 font-['Rajdhani'] block leading-none uppercase">
                     RAPID 3D
                   </span>
-                  <span className="text-[9px] text-[#f15a24] font-mono font-semibold">
+                  <span className="text-[10px] text-[#f15a24] font-mono font-bold">
                     MIT MYSORE
                   </span>
                 </div>
@@ -144,16 +144,16 @@ export const Layout: React.FC = () => {
             </div>
 
             {/* Desktop: Breadcrumbs & Current Page Info */}
-            <div className="hidden md:flex items-center gap-2 text-xs">
-              <Link to="/" className="text-gray-500 hover:text-[#f15a24] font-medium transition">
+            <div className="hidden md:flex items-center gap-2.5">
+              <Link to="/" className="text-sm font-semibold text-gray-500 hover:text-[#f15a24] transition">
                 Portal
               </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-              <span className="font-bold text-gray-900 font-mono">
+              <ChevronRight className="w-4 h-4 text-gray-400" />
+              <span className="font-extrabold text-base sm:text-lg text-gray-900 font-['Rajdhani'] uppercase tracking-wider">
                 {currentInfo.title}
               </span>
-              <span className="hidden lg:inline text-gray-400 mx-2">•</span>
-              <span className="hidden lg:inline text-gray-500 text-[11px]">
+              <span className="hidden lg:inline text-gray-300 mx-2 text-base">•</span>
+              <span className="hidden lg:inline text-gray-600 text-xs sm:text-sm font-medium">
                 {currentInfo.subtitle}
               </span>
             </div>
@@ -162,7 +162,7 @@ export const Layout: React.FC = () => {
             <div className="flex items-center gap-2 md:hidden">
               <Link
                 to="/request"
-                className="px-3 py-1.5 rounded-lg bg-[#f15a24] text-white text-xs font-bold font-mono shadow-sm"
+                className="px-3.5 py-2 rounded-xl bg-[#f15a24] text-white text-xs font-bold font-mono shadow-sm"
               >
                 Get Quote
               </Link>
@@ -191,4 +191,3 @@ export const Layout: React.FC = () => {
     </div>
   );
 };
-
